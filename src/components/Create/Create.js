@@ -34,7 +34,6 @@ const Create = props =>{
                     <label htmlFor='title'>Title</label>
                     <input
                     type="text"
-                    id="title"
                     onChange={titleChange}
                     />
                 </div>
@@ -42,7 +41,6 @@ const Create = props =>{
                 <label htmlFor='descp'>Description</label>
                 <input
                 type="text"
-                id="description .........."
                 onChange={despChange}
                 />
                 </div>
