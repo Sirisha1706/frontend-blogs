@@ -3,6 +3,7 @@ import Button from '../UI/Button/Button';
 import classes from './Register.module.css';
 
 const Register = (props) =>{
+
     return(
         <Card className={classes.register}>
             <form>
@@ -10,7 +11,6 @@ const Register = (props) =>{
                 <label htmlFor='fullname'>Full Name</label>
                 <input
                 type="text"
-                id="text"
                 //value="Name"
                 />
                 </div>
@@ -18,7 +18,6 @@ const Register = (props) =>{
                 <label htmlFor="email">E-Mail</label>
                 <input
                 type="email"
-                id="email"
                 //value='email'
                 />
                 </div>
@@ -26,7 +25,13 @@ const Register = (props) =>{
                 <label htmlFor="password">Password</label>
                 <input
                 type="password"
-                id="password"
+                //value='password'
+                />
+                </div>
+                <div className={classes.control}>
+                <label htmlFor="password">Repeat Password</label>
+                <input
+                type="password"
                 //value='password'
                 />
                 </div>

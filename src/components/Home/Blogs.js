@@ -3,7 +3,7 @@ import styles from './Blogs.module.css';
 
 const Blogs = (props) =>{
     return (
-        <Card className={`${styles.items} ${props.className}`}>
+         <Card className={`${styles.items} ${props.className}`}>
             <div className={styles.blogs}>
                 <h1>{props.feed[0].title}</h1>
                 <p>{props.feed[0].description}</p>

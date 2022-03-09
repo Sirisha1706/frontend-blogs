@@ -84,7 +84,6 @@ const Login = (props) => {
         </div>
       </form>
     </Card>
-    {/* <Register></Register> */}
     </div>
   );
 };

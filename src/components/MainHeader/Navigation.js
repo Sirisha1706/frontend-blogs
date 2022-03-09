@@ -8,17 +8,18 @@ const Navigation = (props) => {
   return (
     <nav className={classes.nav}>
       <ul>
+        {!props.isLoggedIn &&(
           <li>
-            <Link to='/Register'>
-            <button >Register</button>
+            <Link to='/register'>
+            <button type='submit'>Register</button>
             </Link>
           </li>
-  
+        )}
         {props.isLoggedIn && (
           <li>
-            <NavLink to='/Create'>
-            <button>Create</button>
-            </NavLink>
+            <Link to='/create'>
+            <button type='submit'>Create</button>
+            </Link>
           </li>
         )}
         {props.isLoggedIn && (
