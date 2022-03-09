@@ -1,0 +1,22 @@
+.items{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    position: center;
+    width: 80%;
+
+}
+.blogs{
+    text-align: center;
+    border-radius: 20px;
+    border: whitesmoke solid 2px;
+    box-shadow: 2px 2px darkgray ;
+    margin: 20px;
+    padding: 20px;
+    width: 25%;
+
+}
+h1{
+    font-style: bold;
+    text-transform: upperCase;
+}
