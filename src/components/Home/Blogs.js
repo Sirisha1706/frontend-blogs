@@ -7,7 +7,7 @@ const Blogs = (props) =>{
     const [readMore,setReadMore]=useState(false);
     const linkName=readMore?'Read less <<':'Read More >>';
     return (
-         <Card className={`${styles.items} ${props.className}`}>
+         <Card className={`${styles.items} ${props.styles}`}>
             <div className={styles.blogs}>
                 <h3>{props.feed[0].title}</h3>
                 <a className={styles.read_more_link} onClick={()=>{setReadMore(!readMore)}}>{linkName}</a>

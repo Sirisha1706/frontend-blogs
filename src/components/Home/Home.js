@@ -36,7 +36,7 @@ const Home = (props) => {
     },
   ]
   return (
-      <Blogs feed={blogs} className={classes.home}></Blogs>
+      <Blogs feed={blogs} style={classes.home}></Blogs>
   );
 };
 
