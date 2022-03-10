@@ -21,3 +21,13 @@ h1{
     font-style: bold;
     text-transform: upperCase;
 }
+.read_more_link{
+    color: blueviolet;
+    text-decoration: underline;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.extra_content{
+    color: cornflowerblue;
+    font-weight: 500;
+}

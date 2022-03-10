@@ -1,15 +1,20 @@
+
+import { useState } from 'react';
 import Card from '../UI/Card/Card';
 import styles from './Blogs.module.css';
 
 const Blogs = (props) =>{
+    const [readMore,setReadMore]=useState(false);
+    const linkName=readMore?'Read less <<':'Read More >>';
     return (
          <Card className={`${styles.items} ${props.className}`}>
             <div className={styles.blogs}>
-                <h1>{props.feed[0].title}</h1>
-                <p>{props.feed[0].description}</p>
+                <h3>{props.feed[0].title}</h3>
+                <a className={styles.read_more_link} onClick={()=>{setReadMore(!readMore)}}>{linkName}</a>
+                {readMore && <p className={styles.extra_content}>{props.feed[0].description}</p>}
             </div>
             <div className={styles.blogs}>
-                <h1>{props.feed[1].title}</h1>
+                <h3>{props.feed[1].title}</h3>
                 <p>{props.feed[1].description}</p>
             </div>
             <div className={styles.blogs}>
