@@ -15,23 +15,28 @@ const Blogs = (props) =>{
             </div>
             <div className={styles.blogs}>
                 <h3>{props.feed[1].title}</h3>
-                <p>{props.feed[1].description}</p>
+                <a className={styles.read_more_link} onClick={()=>{setReadMore(!readMore)}}>{linkName}</a>
+                {readMore && <p className={styles.extra_content}>{props.feed[1].description}</p>}
             </div>
             <div className={styles.blogs}>
-                <h1>{props.feed[2].title}</h1>
-                <p>{props.feed[2].description}</p>
+                <h3>{props.feed[2].title}</h3>
+                <a className={styles.read_more_link} onClick={()=>{setReadMore(!readMore)}}>{linkName}</a>
+                {readMore && <p className={styles.extra_content}>{props.feed[2].description}</p>}
             </div>
             <div className={styles.blogs}>
-                <h1>{props.feed[3].title}</h1>
-                <p>{props.feed[3].description}</p>
+                <h3>{props.feed[3].title}</h3>
+                <a className={styles.read_more_link} onClick={()=>{setReadMore(!readMore)}}>{linkName}</a>
+                {readMore && <p className={styles.extra_content}>{props.feed[3].description}</p>}
             </div>
             <div className={styles.blogs}>
-                <h1>{props.feed[4].title}</h1>
-                <p>{props.feed[4].description}</p>
+                <h3>{props.feed[4].title}</h3>
+                <a className={styles.read_more_link} onClick={()=>{setReadMore(!readMore)}}>{linkName}</a>
+                {readMore && <p className={styles.extra_content}>{props.feed[4].description}</p>}
             </div>
             <div className={styles.blogs}>
-                <h1>{props.feed[5].title}</h1>
-                <p>{props.feed[5].description}</p>
+                <h3>{props.feed[5].title}</h3>
+                <a className={styles.read_more_link} onClick={()=>{setReadMore(!readMore)}}>{linkName}</a>
+                {readMore && <p className={styles.extra_content}>{props.feed[5].description}</p>}
             </div>
             
     </Card>
