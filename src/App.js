@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {Route ,BrowserRouter, Routes} from 'react-router-dom';
 
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
@@ -31,8 +32,15 @@ function App() {
     <React.Fragment>
       <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
       <main>
-        {!isLoggedIn && <Login onLogin={loginHandler} />}
-        {isLoggedIn && <Home onLogout={logoutHandler} />}
+         <BrowserRouter>
+        <Routes>
+         {!isLoggedIn && <Login onLogin={loginHandler} /> &&
+        <Route exact path='/register' element={<Register/>}/>}
+        {isLoggedIn && <Home onLogout={logoutHandler} />&&
+        <Route exact path='/create' element={<Create/>}/>}
+        </Routes>
+        </BrowserRouter>
+        
       </main>
     </React.Fragment>
   );
