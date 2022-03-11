@@ -4,6 +4,9 @@ import {Route ,BrowserRouter, Routes} from 'react-router-dom';
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
 import MainHeader from './components/MainHeader/MainHeader';
+import Create from './components/Create/Create';
+import Register from './components/Register/Register';
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
