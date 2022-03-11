@@ -3,17 +3,18 @@
     flex-wrap: wrap;
     height: 100%;
     position: center;
-    width: 90%;
+    padding: 30px ;
+    width: 100%;
 
 }
 .blogs{
     text-align: center;
     border-radius: 20px;
-    border: whitesmoke solid 2px;
+    border: whitesmoke solid 5px;
     box-shadow: 2px 2px darkgray ;
     position: relative;
-    margin: 10px;
-    padding: 20px;
+    margin: 20px 17px;
+    padding: 30px 30px;
     width: 30%;
 
 }
@@ -30,4 +31,7 @@ h1{
 .extra_content{
     color: black;
     font-weight: 500;
+}
+p{
+    font-size: small;
 }
