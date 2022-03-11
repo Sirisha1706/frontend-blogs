@@ -20,8 +20,6 @@ function App() {
   }, []);
 
   const loginHandler = (email, password) => {
-    // We should of course check email and password
-    // But it's just a dummy/ demo anyways
     localStorage.setItem('loggedIn', '1');
     setIsLoggedIn(true);
   };
@@ -33,18 +31,17 @@ function App() {
 
   return (
     <React.Fragment>
+       <BrowserRouter>
       <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
       <main>
-         <BrowserRouter>
-        <Routes>
-         {!isLoggedIn && <Login onLogin={loginHandler} /> &&
-        <Route exact path='/register' element={<Register/>}/>}
-        {isLoggedIn && <Home onLogout={logoutHandler} />&&
-        <Route exact path='/create' element={<Create/>}/>}
-        </Routes>
-        </BrowserRouter>
-        
+      {!isLoggedIn && <Login onLogin={loginHandler} />}
+      {isLoggedIn && <Home onLogout={logoutHandler} /> }
       </main>
+        <Routes>
+         {!isLoggedIn && <Route exact path='/register' element={<Register/>}/>}
+         {isLoggedIn &&<Route exact path='/create' element={<Create/>}/>}
+        </Routes>
+      </BrowserRouter>
     </React.Fragment>
   );
 }
