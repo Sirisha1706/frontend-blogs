@@ -29,7 +29,7 @@ const Register = (props) =>{
                 />
                 </div>
                 <div className={classes.control}>
-                <label htmlFor="password">Repeat Password</label>
+                <label htmlFor="password">Re-Enter Password</label>
                 <input
                 type="password"
                 //value='password'

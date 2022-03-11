@@ -8,8 +8,8 @@ const Create = props =>{
     const [enteredTitle, setEnteredTitle] = useState('');
     const [entereddesp, setEnteredDesp] = useState('');
 
-    const titleChange=event=>{
-        setEnteredTitle(event.target.value);
+    const titleChange= event=>{
+        setEnteredTitle(event.target.value);  
     };
     const despChange=event=>{
         setEnteredDesp(event.target.value);
@@ -22,8 +22,8 @@ const Create = props =>{
             title:enteredTitle,
             description:entereddesp
         };
-
-        props.onSaveBlogData(blogdata);
+           
+        props.onSaveData(blogdata);
         setEnteredDesp('');
         setEnteredTitle('');
     };
@@ -35,6 +35,7 @@ const Create = props =>{
                     <input
                     type="text"
                     onChange={titleChange}
+                    value={enteredTitle}
                     />
                 </div>
                 <div className={classes.control}>
@@ -42,6 +43,7 @@ const Create = props =>{
                 <input
                 type="text"
                 onChange={despChange}
+                value={entereddesp}
                 />
                 </div>
                 <div className={classes.actions}>

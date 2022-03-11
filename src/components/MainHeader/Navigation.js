@@ -5,13 +5,20 @@ import classes from './Navigation.module.css';
 // import Register from '../Register/Register';
 
 const Navigation = (props) => {
+  const saveDate = (enteredData)=>{
+      const blogData = {
+        ...enteredData,
+        id: Math.random()
+      };
+      console.log(blogData);
+  };
   return (
-    <nav className={classes.nav}>
+    <nav  className={classes.nav}>
       <ul>
         {!props.isLoggedIn &&(
           <li>
-            <Link to='/register'>
-            <button type='submit'>Register</button>
+            <Link to={{pathname:'/register', state:{from:"onSaveData"}}}>
+            <button>Register</button>
             </Link>
           </li>
         )}
