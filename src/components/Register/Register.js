@@ -1,12 +1,17 @@
+import { useNavigate } from 'react-router-dom';
 import Card from '../UI/Card/Card';
 import Button from '../UI/Button/Button';
 import classes from './Register.module.css';
 
-const Register = (props) =>{
 
+const Register = (props) =>{
+    let navigator = useNavigate();
+    const submitHandler = event =>{
+    navigator('/', {replace: true});
+    };
     return(
         <Card className={classes.register}>
-            <form>
+            <form onSubmit={submitHandler}>
                 <div className={classes.control}>
                 <label htmlFor='fullname'>Full Name</label>
                 <input

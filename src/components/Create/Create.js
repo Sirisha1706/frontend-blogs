@@ -4,7 +4,7 @@ import classes from './Create.module.css';
 import Button from '../UI/Button/Button';
 
 
-const Create = props =>{
+const Create = (props) =>{
     const [enteredTitle, setEnteredTitle] = useState('');
     const [entereddesp, setEnteredDesp] = useState('');
 
@@ -20,7 +20,8 @@ const Create = props =>{
 
         const blogdata={
             title:enteredTitle,
-            description:entereddesp
+            description:entereddesp,
+            id:Math.random()
         };
            
         props.onSaveData(blogdata);

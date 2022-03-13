@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {Route ,BrowserRouter, Routes} from 'react-router-dom';
 
 import Login from './components/Login/Login';
@@ -9,37 +9,16 @@ import Register from './components/Register/Register';
 
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() =>{
-    const userLogin = localStorage.getItem('loggedIn');
-
-  if (userLogin === '1'){
-    setIsLoggedIn(true)
-  }
-  }, []);
-
-  const loginHandler = (email, password) => {
-    localStorage.setItem('loggedIn', '1');
-    setIsLoggedIn(true);
-  };
-
-  const logoutHandler = () => {
-    localStorage.removeItem('loggedIn');
-    setIsLoggedIn(false);
-  };
 
   return (
     <React.Fragment>
        <BrowserRouter>
-      <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
-      <main>
-      {!isLoggedIn && <Login onLogin={loginHandler} />}
-      {isLoggedIn && <Home onLogout={logoutHandler} /> }
-      </main>
+      <MainHeader/>
         <Routes>
-         {!isLoggedIn && <Route exact path='/register' element={<Register/>}/>}
-         {isLoggedIn &&<Route exact path='/create' element={<Create/>}/>}
+        <Route exact path='/register' element={<Register/>}/>
+        <Route exact path='/create' element={<Create/>}/>
+         <Route exact path='/' element={<Home/>}></Route>
+         <Route exact path='/login' element={<Login/>}/>
         </Routes>
       </BrowserRouter>
     </React.Fragment>
