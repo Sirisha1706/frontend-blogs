@@ -1,2 +1,2 @@
 Deployment link:
-      https://frontend-blogs-95ncw4yys-sirisha1706.vercel.app
+     https://frontend-blogs-q6ein0r5d-sirisha1706.vercel.app/
