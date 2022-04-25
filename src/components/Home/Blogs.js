@@ -8,7 +8,7 @@ const Blogs = (props) =>{
     const linkName=readMore?'Read less <<':'Read More >>';
     return (
          <Card className={`${styles.items} ${props.styles}`}>
-            <div className={styles.blogs} >
+            <div className={styles.blogs}>
                 <h3>{props.feed[0].title}</h3>
                 <a className={styles.read_more_link} onClick={()=>{setReadMore(!readMore)}}>{linkName}</a>
                 {readMore && <p className={styles.extra_content}>{props.feed[0].description}</p>}

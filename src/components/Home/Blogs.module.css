@@ -2,9 +2,8 @@
     display: flex;
     flex-wrap: wrap;
     height: 100%;
-    padding: 30px 0px 30px 30px;
     position: center;
-    width: 100%;
+    width: 90%;
 
 }
 .blogs{
@@ -12,14 +11,15 @@
     border-radius: 20px;
     border: whitesmoke solid 2px;
     box-shadow: 2px 2px darkgray ;
+    position: relative;
     margin: 10px;
     padding: 20px;
     width: 30%;
+
 }
 h1{
     font-style: bold;
     text-transform: upperCase;
-    z-index: 1;
 }
 .read_more_link{
     color: blueviolet;

@@ -1,17 +1,12 @@
-import { useNavigate } from 'react-router-dom';
 import Card from '../UI/Card/Card';
 import Button from '../UI/Button/Button';
 import classes from './Register.module.css';
 
-
 const Register = (props) =>{
-    let navigator = useNavigate();
-    const submitHandler = event =>{
-    navigator('/', {replace: true});
-    };
+
     return(
         <Card className={classes.register}>
-            <form onSubmit={submitHandler}>
+            <form>
                 <div className={classes.control}>
                 <label htmlFor='fullname'>Full Name</label>
                 <input
@@ -34,7 +29,7 @@ const Register = (props) =>{
                 />
                 </div>
                 <div className={classes.control}>
-                <label htmlFor="password">Re-Enter Password</label>
+                <label htmlFor="password">Repeat Password</label>
                 <input
                 type="password"
                 //value='password'

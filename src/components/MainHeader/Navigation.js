@@ -1,26 +1,31 @@
 import React from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import classes from './Navigation.module.css';
-// import Create from '../Create/Create';
-// import Register from '../Register/Register';
 
 const Navigation = (props) => {
-  let navigator = useNavigate();
-  const submitHandler = event =>{
-    event.preventDefault();
-    navigator('/login', {replace:true});
-  }
   return (
-    <nav  className={classes.nav}>
-      <form onSubmit={submitHandler}>
+    <nav className={classes.nav}>
       <ul>
+        {!props.isLoggedIn &&(
           <li>
-            <Link to ='/login'> 
-            <button>SignIn/SignUp</button>
+            <Link to='/register'>
+            <button type='submit'>Register</button>
             </Link>
           </li>
+        )}
+        {props.isLoggedIn && (
+          <li>
+            <Link to='/create'>
+            <button type='submit'>Create</button>
+            </Link>
+          </li>
+        )}
+        {props.isLoggedIn && (
+          <li>
+            <button onClick={props.onLogout}>Logout</button>
+          </li>
+        )}
       </ul>
-      </form>
     </nav>
   );
 };

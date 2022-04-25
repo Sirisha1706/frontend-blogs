@@ -4,12 +4,12 @@ import classes from './Create.module.css';
 import Button from '../UI/Button/Button';
 
 
-const Create = (props) =>{
+const Create = props =>{
     const [enteredTitle, setEnteredTitle] = useState('');
     const [entereddesp, setEnteredDesp] = useState('');
 
-    const titleChange= event=>{
-        setEnteredTitle(event.target.value);  
+    const titleChange=event=>{
+        setEnteredTitle(event.target.value);
     };
     const despChange=event=>{
         setEnteredDesp(event.target.value);
@@ -20,11 +20,10 @@ const Create = (props) =>{
 
         const blogdata={
             title:enteredTitle,
-            description:entereddesp,
-            id:Math.random()
+            description:entereddesp
         };
-           
-        props.onSaveData(blogdata);
+
+        props.onSaveBlogData(blogdata);
         setEnteredDesp('');
         setEnteredTitle('');
     };
@@ -36,7 +35,6 @@ const Create = (props) =>{
                     <input
                     type="text"
                     onChange={titleChange}
-                    value={enteredTitle}
                     />
                 </div>
                 <div className={classes.control}>
@@ -44,7 +42,6 @@ const Create = (props) =>{
                 <input
                 type="text"
                 onChange={despChange}
-                value={entereddesp}
                 />
                 </div>
                 <div className={classes.actions}>

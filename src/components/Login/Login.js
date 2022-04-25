@@ -1,15 +1,27 @@
-import React, { useState} from 'react';
-import {Link,useNavigate} from 'react-router-dom';
+import React, { useState, useEffect} from 'react';
+
 import Card from '../UI/Card/Card';
 import classes from './Login.module.css';
 import Button from '../UI/Button/Button';
 
 const Login = (props) => {
-  let navigator = useNavigate();
   const [enteredEmail, setEnteredEmail] = useState('');
   const [emailIsValid, setEmailIsValid] = useState();
   const [enteredPassword, setEnteredPassword] = useState('');
   const [passwordIsValid, setPasswordIsValid] = useState();
+  const [formIsValid, setFormIsValid] = useState(false);
+
+  useEffect(() =>{
+    const timer = setTimeout(() =>{
+      setFormIsValid(
+        enteredEmail.includes('@') && enteredPassword.trim().length > 6
+      );
+    }, 500);
+    
+    return () =>{
+      clearTimeout(timer);
+    };
+  }, [setFormIsValid,enteredEmail,enteredPassword]);
 
   const emailChangeHandler = (event) => {
     setEnteredEmail(event.target.value); 
@@ -29,11 +41,14 @@ const Login = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    navigator('/', {replace:true});
     props.onLogin(enteredEmail, enteredPassword);
   };
 
   return (
+    <div>
+      {
+        
+      }
     <Card className={classes.login}>
       <form onSubmit={submitHandler}>
         <div
@@ -67,15 +82,13 @@ const Login = (props) => {
           
         </div>
         <div className={classes.actions}>
-          <Link to='/register'>
-            <Button className={classes.btn2} >Register</Button>
-          </Link>
-          <Button type="submit" className={classes.btn1}>
+          <Button type="submit" className={classes.btn} disabled={!formIsValid}>
             Login
           </Button>
         </div>
       </form>
     </Card>
+    </div>
   );
 };
 

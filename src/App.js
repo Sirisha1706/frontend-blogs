@@ -1,26 +1,39 @@
-import React from 'react';
-import {Route ,BrowserRouter, Routes} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
 import MainHeader from './components/MainHeader/MainHeader';
-import Create from './components/Create/Create';
-import Register from './components/Register/Register';
-
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() =>{
+    const userLogin = localStorage.getItem('loggedIn');
+
+  if (userLogin === '1'){
+    setIsLoggedIn(true)
+  }
+  }, []);
+
+  const loginHandler = (email, password) => {
+    // We should of course check email and password
+    // But it's just a dummy/ demo anyways
+    localStorage.setItem('loggedIn', '1');
+    setIsLoggedIn(true);
+  };
+
+  const logoutHandler = () => {
+    localStorage.removeItem('loggedIn');
+    setIsLoggedIn(false);
+  };
 
   return (
     <React.Fragment>
-       <BrowserRouter>
-      <MainHeader/>
-        <Routes>
-        <Route exact path='/register' element={<Register/>}/>
-        <Route exact path='/create' element={<Create/>}/>
-         <Route exact path='/' element={<Home/>}></Route>
-         <Route exact path='/login' element={<Login/>}/>
-        </Routes>
-      </BrowserRouter>
+      <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
+      <main>
+        {!isLoggedIn && <Login onLogin={loginHandler} />}
+        {isLoggedIn && <Home onLogout={logoutHandler} />}
+      </main>
     </React.Fragment>
   );
 }

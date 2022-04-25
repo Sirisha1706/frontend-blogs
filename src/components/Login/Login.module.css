@@ -1,8 +1,7 @@
 .login {
   width: 90%;
   max-width: 40rem;
-  margin : 100px 0px 20px 20%;
-  align-items: center;
+  margin: 2rem auto;
   padding: 2rem;
 }
 
@@ -47,13 +46,6 @@
 .actions {
   text-align: center;
 }
-.btn1{
-  margin:20px;
-}
-.btn2{
-  margin: 20px;
-
-}
 
 @media (min-width: 768px) {
   .control {
@@ -61,4 +53,8 @@
     flex-direction: row;
   }
 
+}
+p{
+  font-size: 5px;
+  color:darkgray;
 }
